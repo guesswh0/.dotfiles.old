@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Quit Typora when last window is closed
+defaults write abnerworks.Typora quitAfterWindowClose -bool true
+
+# Send anonymous usage info
+defaults write abnerworks.Typora send_usage_info -bool false
+
+# Open custom folder on launch
+defaults write abnerworks.Typora NSNavLastRootDirectory -string "~/Documents/Notes"
+defaults write abnerworks.Typora restoreWhenLaunch -int 3
+
+# Enable inline math
+defaults write abnerworks.Typora enable_inline_math -bool true
