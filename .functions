@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# cheats.sh
+# https://github.com/chubin/cheat.sh
+cs () {
+  local search_query=""
+  if [ $1 = "-q" ]; then
+    shift 1
+    search_query='\?Q'
+  fi
+  if [[ "${@: -1}" = <-> ]]; then
+    search_query=${@:1:-1}/${@: -1}$search_query
+  else
+    search_query=$*$search_query
+  fi
+  curl https://cheat.sh/$search_query
+}
