@@ -8,10 +8,8 @@ export DOTFILES_DIR=$HOME/.dotfiles
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_DISABLE_COMPFIX=true
 
-# pyenv
-export PYENV_ROOT=$HOME/.pyenv
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+# nvm
+export NVM_DIR=$HOME/.nvm
 
-# PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=$PYENV_ROOT/bin:$PATH
+# pyenv-virtualenv
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1

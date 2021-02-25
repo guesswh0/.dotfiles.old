@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Safe brew uninstall 
+# safe brew uninstall 
 unbrew () {
     local formula
     for formula in "$@"; do

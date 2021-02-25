@@ -1,34 +1,31 @@
 #!/bin/bash
 
-# Lock the screen (when going AFK)
+# lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-# Recursively delete `.DS_Store` files
+# recursively delete `.DS_Store` files
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
-# To let pyenv play nice with brew@
-alias brew='env PATH=${PATH//$(pyenv root)\/shims:/} brew'
-
-# Reload shell
+# reload shell
 alias reload="source ~/.zshrc"
 alias reload!='RELOAD=1 source ~/.zshrc'
 
-# Remove broken symlinks
+# remove broken symlinks
 alias clsym="find -L . -name . -o -type d -prune -o -type l -exec rm {} +"
 
-# Recursively delete __pycache__ dir files (exclude .venv)
+# recursively delete __pycache__ dir files (exclude .venv)
 alias pyclean='find . -type d -name ".venv" -prune -o -name __pycache__ -ls -exec rm -r {} \+'
 
-# Copy pwd to clipboard
+# copy pwd to clipboard
 alias cwd="pwd|tr -d '\n'|pbcopy"
 
-# File size
+# file size
 alias fs="stat -f \"%z bytes\""
 
-# Paths by column
+# paths by column
 alias paths='echo -e ${PATH//:/\\n}'
 
-# Network
+# network
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias whois="whois -h whois-servers.net"

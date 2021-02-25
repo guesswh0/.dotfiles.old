@@ -1,5 +1,3 @@
-# User specific profile for interactive zsh shells.
-
 ZSH_THEME="custom"
 
 plugins=(
@@ -7,6 +5,8 @@ plugins=(
   zsh-completions
   zsh-syntax-highlighting
   docker
+  nvm
+  pyenv
 )
 
 source $DOTFILES_DIR/.aliases
