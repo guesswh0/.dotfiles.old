@@ -6,7 +6,6 @@ export DOTFILES_DIR=$HOME/.dotfiles
 
 # oh my zsh
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_DISABLE_COMPFIX=true
 
 # nvm
 export NVM_DIR=$HOME/.nvm

@@ -9,11 +9,10 @@ else
 fi
 
 # basic tools
-brew install zsh
-brew install git
-brew install tree
 brew install wget
+brew install tree
 brew install pwgen
+brew install bat
 brew install source-highlight
 brew install moreutils
 brew install coreutils

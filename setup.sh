@@ -25,12 +25,4 @@ ln -sfv "$DOTFILES_DIR/custom.zsh-theme" ${ZSH_CUSTOM}/themes
 mkdir ~/.nvm
 ln -sfv "$HOME/Documents/.code" ~
 
-if ! command -v zsh &> /dev/null; then
-    echo "zsh not found. Please install and then re-run installation scripts"
-    exit 1
-elif ! [[ $SHELL =~ .*zsh.* ]]; then
-    echo "Configuring zsh as default shell"
-    chsh -s "$(command -v zsh)"
-fi
-
 echo "Done. Reload your terminal."
