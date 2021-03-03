@@ -24,8 +24,6 @@ brew install readline
 
 # dev tools
 brew install python
-brew install pyenv
-brew install pyenv-virtualenv
 brew install nvm
 
 # apps

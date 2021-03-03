@@ -6,7 +6,6 @@ plugins=(
   zsh-syntax-highlighting
   docker
   nvm
-  pyenv
 )
 
 source $DOTFILES_DIR/.aliases

@@ -6,6 +6,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # recursively delete `.DS_Store` files
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
+# To let pyenv play nice with brew@
+alias brew='env PATH=${PATH//*shims:/} brew'
+
 # reload shell
 alias reload="source ~/.zshrc"
 alias reload!='RELOAD=1 source ~/.zshrc'
