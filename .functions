@@ -34,8 +34,7 @@ cs () {
   fi
   old=$IFS
   IFS="+"
-  search_query=$*$search_query
-  search_query=$prefix/$search_query
+  search_query=$prefix/$*$search_query
   IFS=$old
   curl https://cht.sh/$search_query
 }
