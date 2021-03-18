@@ -9,6 +9,12 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 # To let pyenv play nice with brew@
 alias brew='env PATH=${PATH//*shims:/} brew'
 
+# arch -x86_64 brew
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
+
+# arch -x86_64 zsh
+alias izsh='/usr/bin/arch -x86_64 /bin/zsh --login'
+
 # reload shell
 alias reload="source ~/.zshrc"
 alias reload!='RELOAD=1 source ~/.zshrc'
