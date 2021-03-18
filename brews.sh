@@ -33,6 +33,7 @@ brew install --cask smcfancontrol
 brew install --cask firefox
 brew install --cask iina
 brew install --cask typora
+brew install --cask dash
 brew install --cask macdown
 brew install --cask ngrok
 brew install --cask balenaetcher
