@@ -22,3 +22,4 @@ defaults write com.googlecode.iterm2 SmartPlacement -bool true
 /usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Window Type' 1" Library/Preferences/com.googlecode.iterm2.plist
 /usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:Transparency 0.32" Library/Preferences/com.googlecode.iterm2.plist
 /usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:Screen 0" Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Custom Directory' Recycle" Library/Preferences/com.googlecode.iterm2.plist
