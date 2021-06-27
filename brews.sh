@@ -24,6 +24,7 @@ brew install readline
 
 # dev tools
 brew install python
+brew install poetry
 brew install nvm
 
 # apps
