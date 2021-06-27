@@ -9,7 +9,4 @@ if [ $(uname -m) = "arm64" ]; then
 fi
 
 # pyenv init
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init - --no-rehash zsh)"
-  eval "$(pyenv virtualenv-init - zsh)"
-fi
+eval "$(pyenv init --path)"
