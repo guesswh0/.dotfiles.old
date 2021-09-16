@@ -1,26 +1,26 @@
 #!/bin/bash
 
-# Reload shell
+# reload shell
 alias reload="source ~/.zshrc"
 alias reload!='RELOAD=1 source ~/.zshrc'
 
-# Remove broken symlinks
+# remove broken symlinks
 alias clsym="find -L . -name . -o -type d -prune -o -type l -exec rm {} +"
 
-# Recursively delete __pycache__ dir files (exclude .venv)
+# recursively delete __pycache__ dir files (exclude .venv)
 alias pyclean='find . -type d -name ".venv" -prune -o -name __pycache__ -ls -exec rm -r {} \+'
 
-# Copy pwd to clipboard
+# copy pwd to clipboard
 alias cwd="pwd|tr -d '\n'|pbcopy"
 
-# File size
+# file size
 alias fs="stat -f \"%z bytes\""
 
-# Paths by column
+# paths by column
 alias paths='echo -e ${PATH//:/\\n}'
 
-# Network
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+# network
+alias ipp="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias whois="whois -h whois-servers.net"
 alias hosts="sudo $EDITOR /etc/hosts"

@@ -1,5 +1,3 @@
-# User specific profile for interactive zsh shells.
-
 ZSH_THEME="custom"
 
 plugins=(
@@ -8,6 +6,11 @@ plugins=(
   zsh-syntax-highlighting
   docker
 )
+
+if command -v pyenv >/dev/null; then
+  eval "$(pyenv init -)";
+  eval "$(pyenv virtualenv-init -)";
+fi
 
 source $DOTFILES_DIR/.aliases
 source $DOTFILES_DIR/.functions

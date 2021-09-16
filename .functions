@@ -6,12 +6,24 @@ cs () {
   local search_query=""
   if [ $1 = "-q" ]; then
     shift 1
-    search_query='\?Q'
+    search_query="\?Q"
+  fi
+  local prefix=""
+  local prefixes=(
+    bash c cpp java js julia latex python python3 r
+    cmake django flask git
+  )
+  if (( $prefixes[(Ie)$1] )); then
+    prefix=$1
+    shift 1
   fi
   if [[ "${@: -1}" = <-> ]]; then
-    search_query=${@:1:-1}/${@: -1}$search_query
-  else
-    search_query=$*$search_query
+    search_query=/${@: -1}$search_query
+    shift -p
   fi
-  curl https://cheat.sh/$search_query
+  old=$IFS
+  IFS="+"
+  search_query=$prefix/$*$search_query
+  IFS=$old
+  curl https://cht.sh/$search_query
 }

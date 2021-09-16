@@ -11,22 +11,14 @@ wget -O /tmp/nerd.zip https://github.com/ryanoasis/nerd-fonts/releases/download/
 sudo unzip /tmp/nerd.zip -d /usr/share/fonts/truetype/hack
 sudo fc-cache -f -v
 
-# pyenv 
+# pyenv
 git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
-
-# pyenv-virtualenv
 git clone https://github.com/pyenv/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
 
 # oh-my-zsh
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-
-# zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
-
-# zsh-completions
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM}/plugins/zsh-completions
-
-# zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
 
 # Bunch of symlinks
