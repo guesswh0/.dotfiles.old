@@ -12,7 +12,9 @@ sudo apt-get install -qy \
     net-tools \
     openssh-server \
     zsh \
-    zip
+    zip \
+    bat \
+    tree
 
 # Dev Tools
 sudo apt-get install -qy \
