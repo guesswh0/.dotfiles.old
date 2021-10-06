@@ -8,6 +8,10 @@ else
         brew upgrade
 fi
 
+if [ $(uname -m) = "arm64" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # basic tools
 brew install wget
 brew install tree
@@ -24,7 +28,6 @@ brew install readline
 
 # dev tools
 brew install python
-brew install poetry
 brew install nvm
 
 # apps
@@ -39,6 +42,7 @@ brew install --cask macdown
 brew install --cask ngrok
 brew install --cask balenaetcher
 brew install --cask postman
+brew install --cask docker
 
 # fonts
 brew tap homebrew/cask-fonts
