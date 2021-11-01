@@ -3,13 +3,15 @@
 export DOTFILES_DIR=$HOME/.dotfiles
 export ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 
-# apt packages
-$DOTFILES_DIR/apt.sh
-
 # nerd fonts
 wget -O /tmp/nerd.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
 sudo unzip /tmp/nerd.zip -d /usr/share/fonts/truetype/hack
 sudo fc-cache -f -v
+
+# apt packages
+if read -q "choice?Install packages?: [y/n] "; then
+    $DOTFILES_DIR/apt.sh
+fi
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv

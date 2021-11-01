@@ -55,7 +55,7 @@ esac
   # what font the user is viewing this source code in. Do not replace the
   # escape sequence with a single literal character.
   # Do not change this! Do not make it '\u2b80'; that is the old, wrong code point.
-  SEGMENT_SEPARATOR=$'\ue0b0'
+  SEGMENT_SEPARATOR=$''
 }
 
 # Begin a segment
@@ -74,10 +74,18 @@ prompt_segment() {
   [[ -n $3 ]] && echo -n $3
 }
 
+# Virtualenv: current working virtualenv
+ prompt_virtualenv() {
+   local virtualenv_path="$VIRTUAL_ENV"
+   if [[ -n $virtualenv_path ]]; then
+     prompt_segment default white "\ue235 (`basename $virtualenv_path`)"
+   fi
+ }
+
 # End the prompt, closing any open segments
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
-    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+    echo -n "%{%k%F{$CURRENT_BG}%}\n ❯ "
   else
     echo -n "%{%k%}"
   fi
@@ -91,7 +99,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$(whoami)" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
+    prompt_segment default white "%(!.%{%F{yellow}%}.)%n@%m"
   fi
 }
 
@@ -113,9 +121,9 @@ prompt_git() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      prompt_segment yellow black
+      prompt_segment default yellow
     else
-      prompt_segment green $CURRENT_FG
+      prompt_segment default green
     fi
 
     if [[ -e "${repo_path}/BISECT_LOG" ]]; then
@@ -143,15 +151,7 @@ prompt_git() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment cyan $CURRENT_FG '%(4~|\uf115 /%2~|\uf015 %~)'
-}
-
-# Virtualenv: current working virtualenv
-prompt_virtualenv() {
-  local virtualenv_path="$VIRTUAL_ENV"
-  if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment blue black "(`basename $virtualenv_path`)"
-  fi
+  prompt_segment default cyan '\e[1m%(4~|\uf115 /%2~|\uf015 %~)\e[0m'
 }
 
 # Status:
@@ -165,32 +165,17 @@ prompt_status() {
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
-  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
-}
-
-# AWS Profile:
-# - display current AWS_PROFILE name
-# - displays yellow on red if profile name contains 'production' or
-#   ends in '-prod'
-# - displays black on green otherwise
-prompt_aws() {
-  [[ -z "$AWS_PROFILE" ]] && return
-  case "$AWS_PROFILE" in
-    *-prod|*production*) prompt_segment red yellow  "AWS: $AWS_PROFILE" ;;
-    *) prompt_segment green black "AWS: $AWS_PROFILE" ;;
-  esac
+  [[ -n "$symbols" ]] && prompt_segment default default "$symbols"
 }
 
 ## Main prompt
 build_prompt() {
   RETVAL=$?
   prompt_status
-  prompt_virtualenv
-  prompt_aws
   prompt_context
   prompt_dir
   prompt_git
   prompt_end
 }
 
-PROMPT='%{%f%b%k%}$(build_prompt) '
+PROMPT='%{%f%b%k%}$(build_prompt)'
