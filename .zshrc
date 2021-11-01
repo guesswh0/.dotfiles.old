@@ -5,10 +5,9 @@ plugins=(
   zsh-completions
   zsh-syntax-highlighting
   docker
-  nvm
 )
 
-if command -v pyenv >/dev/null; then 
+if command -v pyenv >/dev/null; then
   eval "$(pyenv init -)";
   eval "$(pyenv virtualenv-init -)";
 fi

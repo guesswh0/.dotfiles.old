@@ -28,7 +28,7 @@ brew install readline
 
 # dev tools
 brew install python
-brew install nvm
+brew install foreman
 
 # apps
 brew install --cask iterm2
@@ -39,12 +39,8 @@ brew install --cask iina
 brew install --cask typora
 brew install --cask dash
 brew install --cask macdown
-brew install --cask ngrok
 brew install --cask balenaetcher
 brew install --cask postman
 brew install --cask docker
-
-# fonts
-brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
-brew install --cask font-jetbrains-mono-nerd-font
+# brew install --cask vagrant
+# brew install --cask ngrok

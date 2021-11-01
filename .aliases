@@ -25,6 +25,9 @@ alias clsym="find -L . -name . -o -type d -prune -o -type l -exec rm {} +"
 # recursively delete __pycache__ dir files (exclude .venv)
 alias pyclean='find . -type d -name ".venv" -prune -o -name __pycache__ -ls -exec rm -r {} \+'
 
+# remove all packages from current pip
+alias pipclean='pip freeze | xargs pip uninstall -y'
+
 # copy pwd to clipboard
 alias cwd="pwd|tr -d '\n'|pbcopy"
 
