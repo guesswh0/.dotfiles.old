@@ -13,33 +13,36 @@ if [ $(uname -m) = "arm64" ]; then
 fi
 
 # basic tools
-brew install wget
-brew install tree
-brew install pwgen
 brew install bat
-brew install source-highlight
+brew install tree
+brew install wget
+brew install pwgen
 brew install moreutils
 brew install coreutils
+brew install source-highlight
 
 # build tools
 brew install cmake
-brew install pkg-config
 brew install readline
+brew install pkg-config
 
 # dev tools
 brew install python
 brew install foreman
+brew install minikube
 
-# apps
-brew install --cask iterm2
+# basic apps
 brew install --cask transmission
 brew install --cask smcfancontrol
-brew install --cask firefox
+brew install --cask google-chrome
 brew install --cask iina
 brew install --cask typora
 brew install --cask dash
 brew install --cask macdown
 brew install --cask balenaetcher
+
+# dev apps
+brew install --cask iterm2
 brew install --cask postman
 brew install --cask docker
 # brew install --cask vagrant
