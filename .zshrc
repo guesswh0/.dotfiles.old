@@ -5,6 +5,8 @@ plugins=(
   zsh-completions
   zsh-syntax-highlighting
   docker
+  kubectl
+  minikube
 )
 
 if command -v pyenv >/dev/null; then
