@@ -32,18 +32,18 @@ brew install foreman
 brew install minikube
 
 # basic apps
-brew install --cask transmission
-brew install --cask smcfancontrol
-brew install --cask google-chrome
+brew install --cask dash
 brew install --cask iina
 brew install --cask typora
-brew install --cask dash
-brew install --cask macdown
-brew install --cask balenaetcher
+brew install --cask transmission
+brew install --cask google-chrome
+brew install --cask smcfancontrol
+brew install --cask syntax-highlight
+# brew install --cask balenaetcher
 
 # dev apps
 brew install --cask iterm2
-brew install --cask postman
 brew install --cask docker
+brew install --cask postman
 # brew install --cask vagrant
 # brew install --cask ngrok

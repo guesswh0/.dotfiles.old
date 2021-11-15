@@ -31,6 +31,9 @@ alias cwd="pwd|tr -d '\n'|pbcopy"
 # file size
 alias fs="stat -f \"%z bytes\""
 
+# cd to mktemp -d
+alias temp="cd $(mktemp -d)"
+
 # paths by column
 alias paths='echo -e ${PATH//:/\\n}'
 
