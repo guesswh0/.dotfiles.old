@@ -16,7 +16,6 @@ fi
 brew install bat
 brew install tree
 brew install wget
-brew install pwgen
 brew install moreutils
 brew install coreutils
 brew install source-highlight
@@ -34,12 +33,11 @@ brew install minikube
 # basic apps
 brew install --cask dash
 brew install --cask iina
+brew install --cask clipy
 brew install --cask typora
 brew install --cask transmission
 brew install --cask google-chrome
-brew install --cask smcfancontrol
 brew install --cask syntax-highlight
-# brew install --cask balenaetcher
 
 # dev apps
 brew install --cask iterm2
