@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# To let pyenv play nice with brew@
+# https://github.com/pyenv/pyenv/issues/106 
 alias brew='env PATH=${PATH//*shims:/} brew'
 
 # arch -x86_64 brew
@@ -23,7 +23,7 @@ alias clsym="find -L . -name . -o -type d -prune -o -type l -exec rm {} +"
 alias pyclean='find . -type d -name ".venv" -prune -o -name __pycache__ -ls -exec rm -r {} \+'
 
 # remove all packages from current pip
-alias pipclean='pip freeze | xargs pip uninstall -y'
+alias pipclean='pip freeze --exclude-editable | xargs pip uninstall -y'
 
 # copy pwd to clipboard
 alias cwd="pwd|tr -d '\n'|pbcopy"
