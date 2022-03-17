@@ -28,6 +28,10 @@ brew install pkg-config
 # dev tools
 brew install python
 brew install foreman
+
+# k8s
+brew install yq
+brew install helm
 brew install minikube
 
 # basic apps
@@ -43,5 +47,3 @@ brew install --cask syntax-highlight
 brew install --cask iterm2
 brew install --cask docker
 brew install --cask postman
-# brew install --cask vagrant
-# brew install --cask ngrok
