@@ -24,6 +24,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins
 
 # bunch of symlinks
 ln -sfv "$HOME/Documents/.code" ~
+ln -sfv "$DOTFILES_DIR/.vimrc" ~
 ln -sfv "$DOTFILES_DIR/.zshrc" ~
 ln -sfv "$DOTFILES_DIR/.zshenv" ~
 ln -sfv "$DOTFILES_DIR/.zprofile" ~

@@ -2,7 +2,7 @@ skip_global_compinit=1
 
 # common
 export FIGNORE=DS_Store
-export EDITOR=$(which nano)
+export EDITOR=$(which vim)
 export DOTFILES_DIR="$HOME/.dotfiles"
 
 # java
